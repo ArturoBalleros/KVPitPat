@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KV PitPad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css">
+    <link rel="stylesheet" href="styles-mobile.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#1f7a68">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="KV PitPad">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+    <div class="mobile-app">
+        <header class="mobile-header">
+            <div>
+                <div class="mobile-eyebrow">PitPat Mobile</div>
+                <h1 class="mobile-title">Treadmill Control</h1>
+            </div>
+            <span id="statusChip" class="mdl-chip chip-disconnected">
+                <span class="mdl-chip__text">Disconnected</span>
+            </span>
+        </header>
+
+        <main class="mobile-layout">
+            <section class="mobile-panel mobile-panel-connection">
+                <div class="panel-heading">
+                    <div>
+                        <h2 class="panel-title">Connection</h2>
+                        <p class="panel-subtitle">Pair the treadmill and unlock all controls.</p>
+                    </div>
+                    <button id="connectBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button connect-button">Connect</button>
+                </div>
+            </section>
+
+            <section class="mobile-panel mobile-panel-metrics">
+                <div class="panel-heading">
+                    <div>
+                        <h2 class="panel-title">Live Metrics</h2>
+                        <p class="panel-subtitle">Designed to fit fully on a phone screen in portrait or landscape.</p>
+                    </div>
+                </div>
+                <div class="mobile-metrics-grid">
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Speed</span>
+                            <span class="material-icons metric-icon">speed</span>
+                        </div>
+                        <div class="metric-value" id="speed">-</div>
+                    </article>
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Distance</span>
+                            <span class="material-icons metric-icon">route</span>
+                        </div>
+                        <div class="metric-value" id="distance">-</div>
+                    </article>
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Calories</span>
+                            <span class="material-icons metric-icon">local_fire_department</span>
+                        </div>
+                        <div class="metric-value" id="calories">-</div>
+                    </article>
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Duration</span>
+                            <span class="material-icons metric-icon">timer</span>
+                        </div>
+                        <div class="metric-value" id="duration">-</div>
+                    </article>
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Steps</span>
+                            <span class="material-icons metric-icon">directions_walk</span>
+                        </div>
+                        <div class="metric-value" id="steps">-</div>
+                    </article>
+                    <article class="mobile-metric-card">
+                        <div class="metric-label-row">
+                            <span class="metric-label">Elevation</span>
+                            <span class="material-icons metric-icon">trending_up</span>
+                        </div>
+                        <div class="metric-value" id="elevation">-</div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="mobile-dual-grid">
+                <section class="mobile-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2 class="panel-title">Workout Controls</h2>
+                            <p class="panel-subtitle">Fast access to start, stop and step speed changes.</p>
+                        </div>
+                    </div>
+                    <div class="control-buttons">
+                        <button id="startBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button btn-green" disabled>Start</button>
+                        <button id="stopBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button btn-red" disabled>Stop</button>
+                        <button id="speedDownBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button button-soft" disabled>Speed Down</button>
+                        <button id="speedUpBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button button-soft" disabled>Speed Up</button>
+                    </div>
+                </section>
+
+                <section class="mobile-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2 class="panel-title">Speed Target</h2>
+                            <p class="panel-subtitle">Precise target from 1.5 to 6.0 kph.</p>
+                        </div>
+                    </div>
+                    <div class="speed-readout">
+                        <span id="sliderValue">1.5</span>
+                        <span class="speed-unit">kph</span>
+                    </div>
+                    <div class="slider-block">
+                        <label class="slider-label" for="speedSlider">Fine adjustment</label>
+                        <input type="range" id="speedSlider" min="1.5" max="6" step="0.1" value="1.5" class="mdl-slider mdl-js-slider">
+                        <div class="range-scale">
+                            <span>1.5</span>
+                            <span>6.0</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="mobile-panel">
+                <div class="panel-heading history-heading">
+                    <div>
+                        <h2 class="panel-title">History</h2>
+                        <p class="panel-subtitle">Stored locally in this browser.</p>
+                    </div>
+                    <div class="history-actions">
+                        <button id="exportHistoryBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button button-soft">Export</button>
+                        <button id="importHistoryBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button button-soft">Import</button>
+                        <button id="clearHistoryBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect app-button btn-red">Clear</button>
+                        <input type="file" id="importHistoryInput" accept="application/json" style="display:none;">
+                    </div>
+                </div>
+                <div class="mobile-history-list" id="historyTableBody"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="loadingOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;align-items:center;justify-content:center;">
+        <div class="mdl-spinner mdl-js-spinner is-active" style="width:56px;height:56px;"></div>
+    </div>
+    <div id="countdownOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10000;align-items:center;justify-content:center;opacity:1;transition:opacity 0.5s;">
+        <span id="countdownNumber" style="color:#fff;font-size:5em;font-weight:bold;transition:transform 0.3s, opacity 0.3s;">3</span>
+    </div>
+    <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/bluetooth.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

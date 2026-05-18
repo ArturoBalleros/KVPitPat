@@ -1,0 +1,17 @@
+{
+  "name": "KV PitPad",
+  "short_name": "KV PitPad",
+  "description": "Bluetooth treadmill control dashboard for PitPat devices.",
+  "start_url": "./mobile.html",
+  "display": "standalone",
+  "background_color": "#f3efe7",
+  "theme_color": "#1f7a68",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

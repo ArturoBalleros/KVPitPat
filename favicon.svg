@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="KV PitPad icon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f7a68"/>
+      <stop offset="100%" stop-color="#2d9c85"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5c86e"/>
+      <stop offset="100%" stop-color="#ed9e35"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <g transform="translate(0 6)">
+    <path d="M34 170c0-12 10-22 22-22h144c12 0 22 10 22 22s-10 22-22 22H56c-12 0-22-10-22-22z" fill="url(#deck)"/>
+    <rect x="50" y="158" width="156" height="24" rx="12" fill="#fff7eb" opacity="0.22"/>
+    <path d="M88 105c8-17 22-27 39-27 9 0 17 3 24 9-10 5-18 13-23 25l-8 20c-3 8-9 12-16 12H87c-8 0-13-4-13-11 0-8 4-13 12-16l2-1z" fill="#fffaf5" transform="translate(194 0) scale(-1 1)"/>
+    <path d="M145 105c8-17 22-27 39-27 9 0 17 3 24 9-10 5-18 13-23 25l-8 20c-3 8-9 12-16 12h-17c-8 0-13-4-13-11 0-8 4-13 12-16l2-1z" fill="#fffaf5" transform="translate(311 0) scale(-1 1)"/>
+    <circle cx="68" cy="170" r="10" fill="#fffaf5" opacity="0.95"/>
+    <circle cx="188" cy="170" r="10" fill="#fffaf5" opacity="0.95"/>
+  </g>
+</svg>
