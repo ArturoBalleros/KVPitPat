@@ -10,4 +10,5 @@ A web-based dashboard to control and monitor a PitPat treadmill via Bluetooth. T
 ## Live Demo
 
 [Web Version](https://arturoballeros.github.io/PitPat-WebBT/)
+
 [Mobile Version](https://arturoballeros.github.io/KVPitPat/mobile.html)
