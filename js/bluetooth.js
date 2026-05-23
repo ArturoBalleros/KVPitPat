@@ -131,7 +131,7 @@ function handleNotification(event) {
 
     // Calcular nuevas métricas
     const steps = Math.floor(distance / 0.45);
-    const elevation = Math.floor(distance * 1000 * 0.06);
+    const elevation = Math.floor(distance * 0.06);
 
     let nextRunningState = 3;
     if (running_state_bits === 24) nextRunningState = 0;
